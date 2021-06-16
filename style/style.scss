@@ -1,0 +1,227 @@
+    //Variables
+    $cyan: hsl(179, 62%, 43%);
+    $yellow: hsl(71, 73%, 54%);
+    * {
+        box-sizing: border-box;
+        font-family: "Karla";
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        font-size: 62.5%;
+        height: 100%;
+    }
+    
+    body {
+        background-color: hsl(216, 18%, 78%);
+        height: 100%;
+    }
+    
+    .container {
+        border-radius: 20px;
+        box-shadow: 0 0 30px -10px;
+        display: grid;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        grid-template-areas: "top top" "left right";
+    }
+    
+    .grid-item {
+        display: flex;
+    }
+    
+    //top row
+    .top-item {
+        border-radius: 15px 15px 0 0;
+        background-color: white;
+        grid-area: top;
+        height: 30vh;
+        flex-direction: row;
+    }
+    
+    .top-text {
+        font-size: 1.5rem;
+        margin: 4rem 8rem 6rem 4rem;
+        line-height: 2;
+        h2 {
+            color: $cyan;
+        }
+        h3 {
+            color: $yellow;
+        }
+        p {
+            color: hsl(218, 22%, 67%);
+            line-height: 1.5;
+        }
+    }
+    
+    //left bottom column
+    .left-item {
+        border-bottom-left-radius: 15px;
+        background-color: $cyan;
+        grid-area: left;
+        height: 35vh;
+        font-size: 2rem;
+    }
+    
+    .left-text {
+        margin: 4rem 3rem 6rem 4rem;
+        font-size: 1.5rem;
+        line-height: 1.8;
+        h3 {
+            color: rgba(255, 255, 255, 0.842);
+        }
+        .price {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        .month {
+            color: rgba(255, 255, 255, 0.479);
+        }
+        p {
+            color: rgba(255, 255, 255, 0.767);
+            font-weight: lighter;
+        }
+    }
+    
+    button {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid $yellow;
+        height: 6vh;
+        color: #FFFFFF;
+        width: 30vh;
+        font-size: 1.5rem;
+        font-weight: 100;
+        background-color: $yellow;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    button:hover {
+        background: hsl(71, 100%, 48%);
+        border: solid hsl(71, 100%, 48%) 1px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    //right bottom column
+    .right-item {
+        background-color: hsl(179, 52%, 48%);
+        border-bottom-right-radius: 15px;
+        grid-area: right;
+        height: 35vh;
+        font-size: 2rem;
+    }
+    
+    .right-text {
+        margin: 4rem 4rem 6rem 4rem;
+        font-size: 1.5rem;
+        h3 {
+            color: rgba(255, 255, 255, 0.842);
+            margin-bottom: 2rem;
+        }
+        ul {
+            font-size: 1.3rem;
+            list-style-type: none;
+            color: rgba(255, 255, 255, 0.582);
+            line-height: 1.5;
+        }
+    }
+    
+    .attribution {
+        font-size: 1.5rem;
+        text-align: center;
+        position: relative;
+        top: 97vh;
+        margin: auto;
+        a {
+            color: $cyan;
+        }
+        a:hover {
+            color: $yellow;
+        }
+    }
+    
+    @media (min-device-width: 1540px) {
+        .grid-item {
+            text-align: left;
+            justify-content: left;
+            align-items: center;
+        }
+        .grid-item>div {
+            font-size: 2rem;
+        }
+        button {
+            margin: 5rem 0 2rem;
+            width: 35vh;
+        }
+        li {
+            font-size: 2rem;
+            line-height: 1.7;
+        }
+    }
+    
+    @media (max-device-width: 1250px) {
+        .container {
+            grid-template-areas: "top" "left" "right";
+        }
+        .grid-item {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .top-item {
+            height: 40vh;
+        }
+        .top-text {
+            margin: 3rem 6rem;
+        }
+        .left-item {
+            border-radius: 0;
+        }
+        .attribution {
+            display: none;
+        }
+    }
+    
+    @media (max-device-width: 767px) {
+        .grid-item {
+            height: 35vh;
+            width: 45vh;
+            text-align: left;
+            justify-content: left;
+        }
+        .top-item {
+            height: 40vh;
+            padding: 4rem 0;
+        }
+        .top-text,
+        .right-text {
+            line-height: 1.1;
+            margin: 2rem;
+        }
+        .left-text {
+            margin: 2rem;
+        }
+        .top-text {
+            h2,
+            h3 {
+                margin-bottom: 1rem;
+            }
+        }
+        button {
+            width: 37vh;
+            margin-top: 3rem;
+        }
+    }
