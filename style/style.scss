@@ -14,7 +14,7 @@
     }
     
     body {
-        background-color: hsl(216, 18%, 78%);
+        background-color: hsl(213, 13%, 84%);
         height: 100%;
     }
     
@@ -28,6 +28,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         grid-template-areas: "top top" "left right";
+        grid-template-columns: 1fr 1fr;
     }
     
     .grid-item {
@@ -173,8 +174,16 @@
     }
     
     @media (max-device-width: 1250px) {
+        body {
+            min-height: 120vh;
+        }
+        br {
+            display: none;
+        }
         .container {
             grid-template-areas: "top" "left" "right";
+            margin-top: 10vh;
+            grid-template-columns: 100%;
         }
         .grid-item {
             text-align: center;
@@ -189,6 +198,9 @@
         }
         .left-item {
             border-radius: 0;
+        }
+        .right-item {
+            border-bottom-left-radius: 15px;
         }
         .attribution {
             display: none;
